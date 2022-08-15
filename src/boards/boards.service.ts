@@ -4,7 +4,7 @@ import { v1 as uuid } from 'uuid';
 import { CreateBoardDto } from './dto/create-board.dto';
 
 //@Injectable 데코레이터를 이용해 앱 내에서 이 서비스를 이용할 수 있도록 함
-//의존성 주입이라고 할 수 있음
+//종속성을 주입한다고 이해할 수 있고, 서비스도 프로바이더에 속한다.
 @Injectable()
 export class BoardsService {
   private boards: Board[] = [];
