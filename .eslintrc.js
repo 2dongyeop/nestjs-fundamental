@@ -1,3 +1,8 @@
+/*
+개발자들이 특정한 규칙을 가지고 코드를 깔끔하게 짤 수 있게 도와주는 라이브러리
+
+타입스크립트를 쓰는 가이드 라인을 제시하고, 문법 오류가 발생하면 알려줌
+ */
 module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
