@@ -11,11 +11,13 @@ import { BoardsService } from './boards.service';
 import { Board, BoardStatus } from './board.model';
 import { CreateBoardDto } from './dto/create-board.dto';
 
+//@Controller 데코레이터를 사용하여 boards controller 생성
 @Controller('boards')
 export class BoardsController {
   constructor(private boardsService: BoardsService) {}
 
-  @Get('/')
+  //@Get, @Post 등등을 핸들러(Handler)라고 하는 컨트롤러 클래스 내의 메소드
+  @Get()
   getAllBoard(): Board[] {
     return this.boardsService.getAllBoards();
   }
