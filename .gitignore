@@ -1,3 +1,6 @@
+### Environment of Development
+docker
+
 # compiled output
 /dist
 /node_modules
