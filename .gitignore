@@ -1,5 +1,6 @@
 ### Environment of Development
 docker
+*config*
 
 # compiled output
 /dist
