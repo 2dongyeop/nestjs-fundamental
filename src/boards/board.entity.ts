@@ -8,6 +8,10 @@ import { BoardStatus } from './board.model';
  */
 
 export class Board extends BaseEntity {
+  /**
+   * @PrimaryGeneratedColumn()는 기본 키 열임을 나타냄
+   * @Column()은 기본 키가 아닌 열
+   */
   @PrimaryGeneratedColumn()
   id: number;
 
