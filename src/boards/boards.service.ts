@@ -2,12 +2,22 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { BoardStatus } from './board-status.enum';
 import { v1 as uuid } from 'uuid';
 import { CreateBoardDto } from './dto/create-board.dto';
+import { InjectRepository } from '@nestjs/typeorm';
+import { BoardRepository } from './board.repository';
 
 //@Injectable 데코레이터를 이용해 앱 내에서 이 서비스를 이용할 수 있도록 함
 //종속성을 주입한다고 이해할 수 있고, 서비스도 프로바이더에 속한다.
 @Injectable()
 export class BoardsService {
-  //
+  constructor(
+    /**
+     * @InjectRepository를 이용해
+     * 서비스에서 Repository를 이용한다고 알림
+     */
+    @InjectRepository(BoardRepository)
+    private boardRepository: BoardRepository,
+  ) {}
+
   // getAllBoards(): Board[] {
   //   return this.boards;
   // }
