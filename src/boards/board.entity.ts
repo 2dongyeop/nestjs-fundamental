@@ -1,4 +1,4 @@
-import { BaseEntity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 import { BoardStatus } from './board.model';
 
 /**
@@ -7,6 +7,7 @@ import { BoardStatus } from './board.model';
  * 간단하게 컬럼들만 정의하면 된다.
  */
 
+@Entity()
 export class Board extends BaseEntity {
   /**
    * @PrimaryGeneratedColumn()는 기본 키 열임을 나타냄
