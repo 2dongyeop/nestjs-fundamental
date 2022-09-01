@@ -15,7 +15,7 @@ export class BoardsService {
      * @InjectRepository를 이용해 종속성 주입
      * 서비스에서 Repository를 이용한다고 알림
      */
-    @InjectRepository(BoardRepository)
+    @InjectRepository(Board)
     private boardRepository: BoardRepository,
   ) {}
 
