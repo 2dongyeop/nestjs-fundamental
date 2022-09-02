@@ -22,7 +22,7 @@ export class BoardsController {
 
   // //@Get, @Post 등등을 핸들러(Handler)라고 하는 컨트롤러 클래스 내의 메소드
   // @Get()
-  // getAllBoard(): Board[] {
+  // getAllBoard(): {
   //   return this.boardsService.getAllBoards();
   // }
   //
@@ -32,17 +32,12 @@ export class BoardsController {
     return this.boardsService.getBoardById(id);
   }
 
-  // @Get('/:id')
-  // getBoardById(@Param('id') id: string): Board {
-  //   return this.boardsService.getBoardById(id);
-  // }
-  //
-  // @Post()
-  // @UsePipes(ValidationPipe) //handler-level pipe
-  // createBoard(@Body() createBoardDto: CreateBoardDto): Board {
-  //   return this.boardsService.createBoard(createBoardDto);
-  // }
-  //
+  @Post()
+  @UsePipes(ValidationPipe) //handler-level pipe
+  createBoard(@Body() createBoardDto: CreateBoardDto): Promise<Board> {
+    return this.boardsService.createBoard(createBoardDto);
+  }
+
   // @Delete('/:id')
   // deleteBoard(@Param('id') id: string): void {
   //   this.boardsService.deleteBoard(id);

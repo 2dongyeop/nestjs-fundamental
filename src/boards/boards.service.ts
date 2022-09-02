@@ -1,6 +1,5 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { BoardStatus } from './board-status.enum';
-import { v1 as uuid } from 'uuid';
 import { CreateBoardDto } from './dto/create-board.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { BoardRepository } from './board.repository';
@@ -34,34 +33,10 @@ export class BoardsService {
     return found;
   }
 
-  // getBoardById(id: string): Board {
-  //   const found = this.boards.find((board) => board.id === id);
-  //
-  //   /**
-  //    * 찾으려는 id의 정보가 없을 경우 예외를 던짐
-  //    */
-  //
-  //   if (!found) {
-  //     throw new NotFoundException(`Can't find Board with id ${id}`);
-  //   }
-  //
-  //   return found;
-  // }
-  //
-  // createBoard(createBoardDto: CreateBoardDto) {
-  //   const { title, description } = createBoardDto;
-  //
-  //   const board: Board = {
-  //     id: uuid(),
-  //     title, //title: title
-  //     description, //description: description
-  //     status: BoardStatus.PUBLIC,
-  //   };
-  //
-  //   this.boards.push(board);
-  //   return board;
-  // }
-  //
+  async createBoard(createBoardDto: CreateBoardDto): Promise<Board> {
+    return this.boardRepository.createBoard(createBoardDto);
+  }
+
   // deleteBoard(id: string): void {
   //   const found = this.getBoardById(id);
   //
