@@ -1,7 +1,7 @@
 ### Nest.js를 학습하며 웹 서비스가 만들어지는 과정을 학습합니다.
-- #### [Controller](https://leedongyeop.notion.site/controller-fbfac3808af34ee9832de36b730b2da0)
+- #### [Controllers](https://leedongyeop.notion.site/controller-fbfac3808af34ee9832de36b730b2da0)
 - #### [Exception filters](https://leedongyeop.notion.site/Exception-filters-f6b70a036a1c42e98edafb2bb396dece)
-
+- #### [Providers](https://leedongyeop.notion.site/Provider-57d9d332bfd1424497269f601e8da782)
 
 <br/>
 
