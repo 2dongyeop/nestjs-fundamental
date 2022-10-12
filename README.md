@@ -7,6 +7,10 @@
 
 <br/>
 
+> 타입스크립트 문법을 학습한 자료는 [링크](https://github.com/2dongyeop/typescript-fundamental)를 통해 확인할 수 있습니다.
+
+<br/>
+
 <br/>
 
 <br/>
