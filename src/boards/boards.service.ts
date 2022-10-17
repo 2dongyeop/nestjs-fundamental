@@ -18,13 +18,8 @@ export class BoardsService {
     private boardRepository: BoardRepository,
   ) {}
 
-  // getAllBoards(): Board[] {
-  //   return this.boards;
-  // }
-  //
-
   async getBoardById(id: number): Promise<Board> {
-    const found = await this.boardRepository.findOne({ where: { id } });
+    const found = await this.boardRepository.findOne({ where: { id: id } });
 
     if (!found) {
       throw new NotFoundException(`Can't find board with id ${id}`);
@@ -34,23 +29,15 @@ export class BoardsService {
   }
 
   async createBoard(createBoardDto: CreateBoardDto): Promise<Board> {
-    return this.boardRepository.createBoard(createBoardDto);
-  }
+    const { title, description } = createBoardDto;
 
-  // deleteBoard(id: string): void {
-  //   const found = this.getBoardById(id);
-  //
-  //   /**
-  //    * found를 getBoardByID()로 가져왔으므로
-  //    * 위에서 선언한 if (!found) {} 문이 여기서도 적용됨
-  //    */
-  //
-  //   this.boards = this.boards.filter((board) => board.id !== found.id);
-  // }
-  //
-  // updateBoardStatus(id: string, status: BoardStatus): Board {
-  //   const board = this.getBoardById(id);
-  //   board.status = status;
-  //   return board;
-  // }
+    const board = this.boardRepository.create({
+      title,
+      description,
+      status: BoardStatus.PUBLIC,
+    });
+
+    await this.boardRepository.save(createBoardDto);
+    return board;
+  }
 }
